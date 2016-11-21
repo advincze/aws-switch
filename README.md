@@ -3,11 +3,19 @@
 switch aws profiles for the command line
 
 aws-switch copies the specified profile to the default 
-(and archives the current deault if it is not found in the other profiles)
+(and archives the current default if it is not found in the other profiles)
 
-usage: 
+#### install:
 
-`$ aws-switch [profile]` 
+```
+go get -u github.com/advincze/aws-switch
+```
 
-profile usage suffix search, so partials matches are also found if they are not ambigous
+#### use: 
+
+```
+$ aws-switch [profile]
+```
+
+profile usage suffix search, so partial matches are also found if they are not ambigous
 
