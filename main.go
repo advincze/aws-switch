@@ -98,7 +98,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("Switched aws profile %q to default.", sectionName)
+	fmt.Printf("Switched aws profile %q to default.", sectionName)
 }
 
 func findSection(sections []string, profileName string) (string, error) {
