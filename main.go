@@ -3,13 +3,11 @@ package main
 import (
 	"fmt"
 	"index/suffixarray"
+	"log"
 	"os"
 	"path/filepath"
 	"regexp"
 	"strings"
-
-	"log"
-
 	"time"
 
 	"github.com/go-ini/ini"
