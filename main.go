@@ -34,11 +34,6 @@ func filename() (string, error) {
 }
 
 func main() {
-	if len(os.Args) < 2 {
-		log.Fatalf("expected profile")
-	}
-
-	profileName := os.Args[1]
 
 	filename, err := filename()
 	if err != nil {
@@ -48,6 +43,17 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	if len(os.Args) < 2 {
+		fmt.Fprintln(os.Stderr, "available profiles:")
+		for _, section := range config.SectionStrings() {
+			fmt.Fprintln(os.Stderr, "\t"+section)
+		}
+		fmt.Fprintln(os.Stderr, "---")
+		log.Fatalf("expected profile")
+	}
+
+	profileName := os.Args[1]
 
 	if profileName == "default" {
 		return
